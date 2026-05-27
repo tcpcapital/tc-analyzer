@@ -1,830 +1,542 @@
-{
-  "name": "topcard-analyzer",
-  "version": "1.0.0",
-  "lockfileVersion": 3,
-  "requires": true,
-  "packages": {
-    "": {
-      "name": "topcard-analyzer",
-      "version": "1.0.0",
-      "dependencies": {
-        "express": "^4.18.2"
-      },
-      "engines": {
-        "node": ">=18.0.0"
-      }
-    },
-    "node_modules/accepts": {
-      "version": "1.3.8",
-      "resolved": "https://registry.npmjs.org/accepts/-/accepts-1.3.8.tgz",
-      "integrity": "sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==",
-      "license": "MIT",
-      "dependencies": {
-        "mime-types": "~2.1.34",
-        "negotiator": "0.6.3"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/array-flatten": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz",
-      "integrity": "sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==",
-      "license": "MIT"
-    },
-    "node_modules/body-parser": {
-      "version": "1.20.5",
-      "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.20.5.tgz",
-      "integrity": "sha512-3grm+/2tUOvu2cjJkvsIxrv/wVpfXQW4PsQHYm7yk4vfpu7Ekl6nEsYBoJUL6qDwZUx8wUhQ8tR2qz+ad9c9OA==",
-      "license": "MIT",
-      "dependencies": {
-        "bytes": "~3.1.2",
-        "content-type": "~1.0.5",
-        "debug": "2.6.9",
-        "depd": "2.0.0",
-        "destroy": "~1.2.0",
-        "http-errors": "~2.0.1",
-        "iconv-lite": "~0.4.24",
-        "on-finished": "~2.4.1",
-        "qs": "~6.15.1",
-        "raw-body": "~2.5.3",
-        "type-is": "~1.6.18",
-        "unpipe": "~1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.8",
-        "npm": "1.2.8000 || >= 1.4.16"
-      }
-    },
-    "node_modules/bytes": {
-      "version": "3.1.2",
-      "resolved": "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz",
-      "integrity": "sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/call-bind-apply-helpers": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
-      "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0",
-        "function-bind": "^1.1.2"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/call-bound": {
-      "version": "1.0.4",
-      "resolved": "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz",
-      "integrity": "sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bind-apply-helpers": "^1.0.2",
-        "get-intrinsic": "^1.3.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/content-disposition": {
-      "version": "0.5.4",
-      "resolved": "https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.4.tgz",
-      "integrity": "sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==",
-      "license": "MIT",
-      "dependencies": {
-        "safe-buffer": "5.2.1"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/content-type": {
-      "version": "1.0.5",
-      "resolved": "https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz",
-      "integrity": "sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/cookie": {
-      "version": "0.7.2",
-      "resolved": "https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz",
-      "integrity": "sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/cookie-signature": {
-      "version": "1.0.7",
-      "resolved": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.7.tgz",
-      "integrity": "sha512-NXdYc3dLr47pBkpUCHtKSwIOQXLVn8dZEuywboCOJY/osA0wFSLlSawr3KN8qXJEyX66FcONTH8EIlVuK0yyFA==",
-      "license": "MIT"
-    },
-    "node_modules/debug": {
-      "version": "2.6.9",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
-      "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
-      "license": "MIT",
-      "dependencies": {
-        "ms": "2.0.0"
-      }
-    },
-    "node_modules/depd": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz",
-      "integrity": "sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/destroy": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz",
-      "integrity": "sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8",
-        "npm": "1.2.8000 || >= 1.4.16"
-      }
-    },
-    "node_modules/dunder-proto": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz",
-      "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bind-apply-helpers": "^1.0.1",
-        "es-errors": "^1.3.0",
-        "gopd": "^1.2.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/ee-first": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz",
-      "integrity": "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==",
-      "license": "MIT"
-    },
-    "node_modules/encodeurl": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz",
-      "integrity": "sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/es-define-property": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
-      "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/es-errors": {
-      "version": "1.3.0",
-      "resolved": "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz",
-      "integrity": "sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/es-object-atoms": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.2.tgz",
-      "integrity": "sha512-HWcBoN6NileqtSydK2FqHbS/LoDd2pqrnQHLyJzBj4kOp/ky2MWMN694xOfkK8/SnUsW2DH7EfyVlydKCsm1Zw==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/escape-html": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz",
-      "integrity": "sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==",
-      "license": "MIT"
-    },
-    "node_modules/etag": {
-      "version": "1.8.1",
-      "resolved": "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz",
-      "integrity": "sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/express": {
-      "version": "4.22.2",
-      "resolved": "https://registry.npmjs.org/express/-/express-4.22.2.tgz",
-      "integrity": "sha512-IuL+Elrou2ZvCFHs18/CIzy2Nzvo25nZ1/D2eIZlz7c+QUayAcYoiM2BthCjs+EBHVpjYjcuLDAiCWgeIX3X1Q==",
-      "license": "MIT",
-      "dependencies": {
-        "accepts": "~1.3.8",
-        "array-flatten": "1.1.1",
-        "body-parser": "~1.20.5",
-        "content-disposition": "~0.5.4",
-        "content-type": "~1.0.4",
-        "cookie": "~0.7.1",
-        "cookie-signature": "~1.0.6",
-        "debug": "2.6.9",
-        "depd": "2.0.0",
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "etag": "~1.8.1",
-        "finalhandler": "~1.3.1",
-        "fresh": "~0.5.2",
-        "http-errors": "~2.0.0",
-        "merge-descriptors": "1.0.3",
-        "methods": "~1.1.2",
-        "on-finished": "~2.4.1",
-        "parseurl": "~1.3.3",
-        "path-to-regexp": "~0.1.12",
-        "proxy-addr": "~2.0.7",
-        "qs": "~6.15.1",
-        "range-parser": "~1.2.1",
-        "safe-buffer": "5.2.1",
-        "send": "~0.19.0",
-        "serve-static": "~1.16.2",
-        "setprototypeof": "1.2.0",
-        "statuses": "~2.0.1",
-        "type-is": "~1.6.18",
-        "utils-merge": "1.0.1",
-        "vary": "~1.1.2"
-      },
-      "engines": {
-        "node": ">= 0.10.0"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/express"
-      }
-    },
-    "node_modules/finalhandler": {
-      "version": "1.3.2",
-      "resolved": "https://registry.npmjs.org/finalhandler/-/finalhandler-1.3.2.tgz",
-      "integrity": "sha512-aA4RyPcd3badbdABGDuTXCMTtOneUCAYH/gxoYRTZlIJdF0YPWuGqiAsIrhNnnqdXGswYk6dGujem4w80UJFhg==",
-      "license": "MIT",
-      "dependencies": {
-        "debug": "2.6.9",
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "on-finished": "~2.4.1",
-        "parseurl": "~1.3.3",
-        "statuses": "~2.0.2",
-        "unpipe": "~1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/forwarded": {
-      "version": "0.2.0",
-      "resolved": "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz",
-      "integrity": "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/fresh": {
-      "version": "0.5.2",
-      "resolved": "https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz",
-      "integrity": "sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/function-bind": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz",
-      "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
-      "license": "MIT",
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/get-intrinsic": {
-      "version": "1.3.0",
-      "resolved": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz",
-      "integrity": "sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bind-apply-helpers": "^1.0.2",
-        "es-define-property": "^1.0.1",
-        "es-errors": "^1.3.0",
-        "es-object-atoms": "^1.1.1",
-        "function-bind": "^1.1.2",
-        "get-proto": "^1.0.1",
-        "gopd": "^1.2.0",
-        "has-symbols": "^1.1.0",
-        "hasown": "^2.0.2",
-        "math-intrinsics": "^1.1.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/get-proto": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz",
-      "integrity": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==",
-      "license": "MIT",
-      "dependencies": {
-        "dunder-proto": "^1.0.1",
-        "es-object-atoms": "^1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/gopd": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz",
-      "integrity": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/has-symbols": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
-      "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/hasown": {
-      "version": "2.0.3",
-      "resolved": "https://registry.npmjs.org/hasown/-/hasown-2.0.3.tgz",
-      "integrity": "sha512-ej4AhfhfL2Q2zpMmLo7U1Uv9+PyhIZpgQLGT1F9miIGmiCJIoCgSmczFdrc97mWT4kVY72KA+WnnhJ5pghSvSg==",
-      "license": "MIT",
-      "dependencies": {
-        "function-bind": "^1.1.2"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/http-errors": {
-      "version": "2.0.1",
-      "resolved": "https://registry.npmjs.org/http-errors/-/http-errors-2.0.1.tgz",
-      "integrity": "sha512-4FbRdAX+bSdmo4AUFuS0WNiPz8NgFt+r8ThgNWmlrjQjt1Q7ZR9+zTlce2859x4KSXrwIsaeTqDoKQmtP8pLmQ==",
-      "license": "MIT",
-      "dependencies": {
-        "depd": "~2.0.0",
-        "inherits": "~2.0.4",
-        "setprototypeof": "~1.2.0",
-        "statuses": "~2.0.2",
-        "toidentifier": "~1.0.1"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      },
-      "funding": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/express"
-      }
-    },
-    "node_modules/iconv-lite": {
-      "version": "0.4.24",
-      "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz",
-      "integrity": "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==",
-      "license": "MIT",
-      "dependencies": {
-        "safer-buffer": ">= 2.1.2 < 3"
-      },
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/inherits": {
-      "version": "2.0.4",
-      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",
-      "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",
-      "license": "ISC"
-    },
-    "node_modules/ipaddr.js": {
-      "version": "1.9.1",
-      "resolved": "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.9.1.tgz",
-      "integrity": "sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.10"
-      }
-    },
-    "node_modules/math-intrinsics": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz",
-      "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      }
-    },
-    "node_modules/media-typer": {
-      "version": "0.3.0",
-      "resolved": "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz",
-      "integrity": "sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/merge-descriptors": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.3.tgz",
-      "integrity": "sha512-gaNvAS7TZ897/rVaZ0nMtAyxNyi/pdbjbAwUpFQpN70GqnVfOiXpeUUMKRBmzXaSQ8DdTX4/0ms62r2K+hE6mQ==",
-      "license": "MIT",
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      }
-    },
-    "node_modules/methods": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/methods/-/methods-1.1.2.tgz",
-      "integrity": "sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/mime": {
-      "version": "1.6.0",
-      "resolved": "https://registry.npmjs.org/mime/-/mime-1.6.0.tgz",
-      "integrity": "sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==",
-      "license": "MIT",
-      "bin": {
-        "mime": "cli.js"
-      },
-      "engines": {
-        "node": ">=4"
-      }
-    },
-    "node_modules/mime-db": {
-      "version": "1.52.0",
-      "resolved": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz",
-      "integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/mime-types": {
-      "version": "2.1.35",
-      "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz",
-      "integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==",
-      "license": "MIT",
-      "dependencies": {
-        "mime-db": "1.52.0"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/ms": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-      "integrity": "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==",
-      "license": "MIT"
-    },
-    "node_modules/negotiator": {
-      "version": "0.6.3",
-      "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.3.tgz",
-      "integrity": "sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/object-inspect": {
-      "version": "1.13.4",
-      "resolved": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.4.tgz",
-      "integrity": "sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/on-finished": {
-      "version": "2.4.1",
-      "resolved": "https://registry.npmjs.org/on-finished/-/on-finished-2.4.1.tgz",
-      "integrity": "sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==",
-      "license": "MIT",
-      "dependencies": {
-        "ee-first": "1.1.1"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/parseurl": {
-      "version": "1.3.3",
-      "resolved": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz",
-      "integrity": "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/path-to-regexp": {
-      "version": "0.1.13",
-      "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.13.tgz",
-      "integrity": "sha512-A/AGNMFN3c8bOlvV9RreMdrv7jsmF9XIfDeCd87+I8RNg6s78BhJxMu69NEMHBSJFxKidViTEdruRwEk/WIKqA==",
-      "license": "MIT"
-    },
-    "node_modules/proxy-addr": {
-      "version": "2.0.7",
-      "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz",
-      "integrity": "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==",
-      "license": "MIT",
-      "dependencies": {
-        "forwarded": "0.2.0",
-        "ipaddr.js": "1.9.1"
-      },
-      "engines": {
-        "node": ">= 0.10"
-      }
-    },
-    "node_modules/qs": {
-      "version": "6.15.2",
-      "resolved": "https://registry.npmjs.org/qs/-/qs-6.15.2.tgz",
-      "integrity": "sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==",
-      "license": "BSD-3-Clause",
-      "dependencies": {
-        "side-channel": "^1.1.0"
-      },
-      "engines": {
-        "node": ">=0.6"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/range-parser": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz",
-      "integrity": "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/raw-body": {
-      "version": "2.5.3",
-      "resolved": "https://registry.npmjs.org/raw-body/-/raw-body-2.5.3.tgz",
-      "integrity": "sha512-s4VSOf6yN0rvbRZGxs8Om5CWj6seneMwK3oDb4lWDH0UPhWcxwOWw5+qk24bxq87szX1ydrwylIOp2uG1ojUpA==",
-      "license": "MIT",
-      "dependencies": {
-        "bytes": "~3.1.2",
-        "http-errors": "~2.0.1",
-        "iconv-lite": "~0.4.24",
-        "unpipe": "~1.0.0"
-      },
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/safe-buffer": {
-      "version": "5.2.1",
-      "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
-      "integrity": "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==",
-      "funding": [
-        {
-          "type": "github",
-          "url": "https://github.com/sponsors/feross"
-        },
-        {
-          "type": "patreon",
-          "url": "https://www.patreon.com/feross"
-        },
-        {
-          "type": "consulting",
-          "url": "https://feross.org/support"
-        }
-      ],
-      "license": "MIT"
-    },
-    "node_modules/safer-buffer": {
-      "version": "2.1.2",
-      "resolved": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
-      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
-      "license": "MIT"
-    },
-    "node_modules/send": {
-      "version": "0.19.2",
-      "resolved": "https://registry.npmjs.org/send/-/send-0.19.2.tgz",
-      "integrity": "sha512-VMbMxbDeehAxpOtWJXlcUS5E8iXh6QmN+BkRX1GARS3wRaXEEgzCcB10gTQazO42tpNIya8xIyNx8fll1OFPrg==",
-      "license": "MIT",
-      "dependencies": {
-        "debug": "2.6.9",
-        "depd": "2.0.0",
-        "destroy": "1.2.0",
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "etag": "~1.8.1",
-        "fresh": "~0.5.2",
-        "http-errors": "~2.0.1",
-        "mime": "1.6.0",
-        "ms": "2.1.3",
-        "on-finished": "~2.4.1",
-        "range-parser": "~1.2.1",
-        "statuses": "~2.0.2"
-      },
-      "engines": {
-        "node": ">= 0.8.0"
-      }
-    },
-    "node_modules/send/node_modules/ms": {
-      "version": "2.1.3",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
-      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
-      "license": "MIT"
-    },
-    "node_modules/serve-static": {
-      "version": "1.16.3",
-      "resolved": "https://registry.npmjs.org/serve-static/-/serve-static-1.16.3.tgz",
-      "integrity": "sha512-x0RTqQel6g5SY7Lg6ZreMmsOzncHFU7nhnRWkKgWuMTu5NN0DR5oruckMqRvacAN9d5w6ARnRBXl9xhDCgfMeA==",
-      "license": "MIT",
-      "dependencies": {
-        "encodeurl": "~2.0.0",
-        "escape-html": "~1.0.3",
-        "parseurl": "~1.3.3",
-        "send": "~0.19.1"
-      },
-      "engines": {
-        "node": ">= 0.8.0"
-      }
-    },
-    "node_modules/setprototypeof": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
-      "integrity": "sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==",
-      "license": "ISC"
-    },
-    "node_modules/side-channel": {
-      "version": "1.1.0",
-      "resolved": "https://registry.npmjs.org/side-channel/-/side-channel-1.1.0.tgz",
-      "integrity": "sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0",
-        "object-inspect": "^1.13.3",
-        "side-channel-list": "^1.0.0",
-        "side-channel-map": "^1.0.1",
-        "side-channel-weakmap": "^1.0.2"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/side-channel-list": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.1.tgz",
-      "integrity": "sha512-mjn/0bi/oUURjc5Xl7IaWi/OJJJumuoJFQJfDDyO46+hBWsfaVM65TBHq2eoZBhzl9EchxOijpkbRC8SVBQU0w==",
-      "license": "MIT",
-      "dependencies": {
-        "es-errors": "^1.3.0",
-        "object-inspect": "^1.13.4"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/side-channel-map": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/side-channel-map/-/side-channel-map-1.0.1.tgz",
-      "integrity": "sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bound": "^1.0.2",
-        "es-errors": "^1.3.0",
-        "get-intrinsic": "^1.2.5",
-        "object-inspect": "^1.13.3"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/side-channel-weakmap": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/side-channel-weakmap/-/side-channel-weakmap-1.0.2.tgz",
-      "integrity": "sha512-WPS/HvHQTYnHisLo9McqBHOJk2FkHO/tlpvldyrnem4aeQp4hai3gythswg6p01oSoTl58rcpiFAjF2br2Ak2A==",
-      "license": "MIT",
-      "dependencies": {
-        "call-bound": "^1.0.2",
-        "es-errors": "^1.3.0",
-        "get-intrinsic": "^1.2.5",
-        "object-inspect": "^1.13.3",
-        "side-channel-map": "^1.0.1"
-      },
-      "engines": {
-        "node": ">= 0.4"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ljharb"
-      }
-    },
-    "node_modules/statuses": {
-      "version": "2.0.2",
-      "resolved": "https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz",
-      "integrity": "sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/toidentifier": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
-      "integrity": "sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=0.6"
-      }
-    },
-    "node_modules/type-is": {
-      "version": "1.6.18",
-      "resolved": "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz",
-      "integrity": "sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==",
-      "license": "MIT",
-      "dependencies": {
-        "media-typer": "0.3.0",
-        "mime-types": "~2.1.24"
-      },
-      "engines": {
-        "node": ">= 0.6"
-      }
-    },
-    "node_modules/unpipe": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
-      "integrity": "sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    },
-    "node_modules/utils-merge": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz",
-      "integrity": "sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.4.0"
-      }
-    },
-    "node_modules/vary": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz",
-      "integrity": "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==",
-      "license": "MIT",
-      "engines": {
-        "node": ">= 0.8"
-      }
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TopCard Payments — Statement Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07080f;--surface:#0f1118;--surface2:#161b27;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --text:#e8eaf2;--muted:#6b7299;
+  --blue:#4a7fff;--blue-dim:rgba(74,127,255,0.12);
+  --green:#00c896;--green-dim:rgba(0,200,150,0.12);
+  --purple:#9b6dff;--purple-dim:rgba(155,109,255,0.12);
+  --red:#ff5c6a;--red-dim:rgba(255,92,106,0.10);
+  --gold:#f5a623;
+  --font:'DM Sans',sans-serif;--display:'Syne',sans-serif;
+  --radius:10px;--radius-lg:14px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.5;min-height:100vh}
+#api-banner{background:linear-gradient(90deg,rgba(74,127,255,0.15),rgba(155,109,255,0.15));border-bottom:1px solid var(--border2);padding:10px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+#api-banner label{font-size:12px;color:var(--muted);white-space:nowrap}
+#api-key-input{flex:1;min-width:260px;max-width:420px;background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:7px 12px;color:var(--text);font-family:var(--font);font-size:13px}
+#api-key-input:focus{outline:none;border-color:var(--blue)}
+#api-key-save{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font)}
+.api-hint{font-size:11px;color:var(--muted)}
+.api-hint a{color:var(--blue);text-decoration:none}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(15,17,24,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.logo-wrap{display:flex;align-items:center;gap:14px}
+.logo-wrap img{height:38px;object-fit:contain}
+.logo-divider{width:1px;height:24px;background:var(--border2)}
+.header-tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.key-status{font-size:11px;padding:4px 10px;border-radius:20px;border:1px solid var(--border)}
+.key-status.set{border-color:rgba(0,200,150,0.4);color:var(--green);background:var(--green-dim)}
+.key-status.unset{border-color:rgba(255,92,106,0.4);color:var(--red);background:var(--red-dim)}
+main{max-width:1100px;margin:0 auto;padding:32px 24px}
+.upload-screen{display:flex;flex-direction:column;align-items:center;gap:24px;max-width:640px;margin:0 auto;padding:40px 0}
+.upload-hero{text-align:center}
+.upload-hero h1{font-family:var(--display);font-size:42px;line-height:1.05}
+.upload-hero h1 span{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.upload-hero p{color:var(--muted);margin-top:10px;font-size:15px}
+.file-tabs{display:flex;width:100%;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;border:1px solid var(--border2);border-bottom:none}
+.file-tab{flex:1;padding:10px;text-align:center;font-size:13px;font-weight:500;cursor:pointer;background:var(--surface2);color:var(--muted);border:none;font-family:var(--font);transition:all .15s}
+.file-tab:first-child{border-right:1px solid var(--border)}
+.file-tab.on{background:var(--surface);color:var(--text)}
+.drop-zone{width:100%;border:1.5px dashed var(--border2);border-radius:0 0 var(--radius-lg) var(--radius-lg);padding:36px 24px;text-align:center;cursor:pointer;background:var(--surface);transition:all .2s}
+.drop-zone:hover,.drop-zone.over{border-color:var(--blue);background:var(--blue-dim)}
+.drop-icon{font-size:32px;margin-bottom:10px}
+.drop-zone h3{font-size:15px;font-weight:600}
+.drop-zone p{font-size:13px;color:var(--muted);margin-top:4px}
+.file-chosen{width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--green-dim);border:1px solid rgba(0,200,150,0.25);border-radius:var(--radius);font-size:13px}
+.file-chosen .fname{flex:1;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-chosen .fsize{color:var(--muted);font-size:11px}
+.file-chosen .fclear{background:transparent;border:1px solid var(--border2);color:var(--muted);padding:3px 8px;border-radius:6px;cursor:pointer;font-size:11px;font-family:var(--font)}
+.or-div{display:flex;align-items:center;gap:10px;width:100%;color:var(--muted);font-size:12px}
+.or-div::before,.or-div::after{content:"";flex:1;height:1px;background:var(--border)}
+.paste-area{width:100%;min-height:120px;padding:12px 14px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:var(--font);font-size:13px;resize:vertical}
+.paste-area:focus{outline:none;border-color:var(--blue)}
+.btn-analyze{width:100%;padding:12px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font);transition:opacity .2s}
+.btn-analyze:hover{opacity:.88}
+.btn-demo{width:100%;padding:9px;background:transparent;border:1px solid var(--border2);border-radius:var(--radius);font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--font);transition:all .15s}
+.btn-demo:hover{color:var(--text);background:var(--surface2)}
+.err-box{width:100%;padding:12px 14px;background:var(--red-dim);border:1px solid rgba(255,92,106,0.3);border-radius:var(--radius);font-size:13px;color:var(--red);line-height:1.6}
+.parsing-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:50vh;gap:16px;text-align:center}
+.spinner{width:44px;height:44px;border:2.5px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.parsing-screen h2{font-size:22px;font-weight:600}
+.parsing-screen p{color:var(--muted)}
+.merchant-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.merchant-name{font-size:17px;font-weight:600}
+.merchant-meta{font-size:12px;color:var(--muted);margin-top:2px}
+.btn-back{background:transparent;border:1px solid var(--border2);color:var(--muted);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-family:var(--font)}
+.btn-back:hover{color:var(--text)}
+.rate-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:16px}
+.rate-ctrl label{font-size:11px;color:var(--muted);display:block;margin-bottom:3px}
+.rate-ctrl .rv{font-size:14px;font-weight:600;color:var(--text)}
+input[type=range]{width:100%;margin-top:5px;-webkit-appearance:none;height:3px;background:var(--border2);border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:var(--blue);border-radius:50%;cursor:pointer}
+.tab-bar{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.tab-btn{padding:7px 15px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--muted);font-family:var(--font);transition:all .15s}
+.tab-btn:hover{background:var(--surface2);color:var(--text)}
+.tab-btn.on{background:var(--surface2);color:var(--text);border-color:var(--border2)}
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px}
+.metric.danger{background:var(--red-dim);border-color:rgba(255,92,106,0.25)}
+.metric.success{background:var(--green-dim);border-color:rgba(0,200,150,0.25)}
+.metric-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.metric.danger .metric-label{color:var(--red);opacity:.8}
+.metric.success .metric-label{color:var(--green);opacity:.8}
+.metric-value{font-size:20px;font-weight:600}
+.metric.danger .metric-value{color:var(--red)}
+.metric.success .metric-value{color:var(--green)}
+.metric-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px}
+.sum-card{background:var(--surface);border:1px solid var(--border);border-top:2px solid;border-radius:var(--radius-lg);padding:16px}
+.sum-card.blue{border-top-color:var(--blue)}
+.sum-card.green{border-top-color:var(--green)}
+.sum-card.purple{border-top-color:var(--purple)}
+.sum-card h4{font-size:13px;font-weight:600;margin-bottom:12px}
+.sum-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--border)}
+.sum-row:last-child{border-bottom:none}
+.sum-row .sl{color:var(--muted)}
+.sum-row.big{font-size:13px;font-weight:600}
+.sum-row.blue .sv{color:var(--blue)}
+.sum-row.green .sv{color:var(--green)}
+.sum-row.purple .sv{color:var(--purple)}
+.sblock{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;margin-bottom:12px}
+.sblock h3{font-size:14px;font-weight:600;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.drow{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border)}
+.drow:last-child{border-bottom:none}
+.drow .dl{color:var(--muted)}
+.drow.big{font-size:14px;font-weight:600}
+.drow.green .dv{color:var(--green)}
+.drow.red .dv{color:var(--red)}
+.note-box{background:var(--surface2);border-left:2px solid var(--border2);padding:10px 14px;border-radius:0 8px 8px 0;font-size:12px;color:var(--muted);margin-top:10px;line-height:1.7}
+.prog-hero{border-radius:var(--radius-lg);padding:20px;margin-bottom:16px}
+.prog-hero.blue{background:var(--blue-dim);border:1px solid rgba(74,127,255,0.2)}
+.prog-hero.green{background:var(--green-dim);border:1px solid rgba(0,200,150,0.2)}
+.prog-hero.purple{background:var(--purple-dim);border:1px solid rgba(155,109,255,0.2)}
+.prog-hero .ph-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.prog-hero .ph-value{font-size:24px;font-weight:700;margin-top:3px}
+.prog-hero .ph-sub{font-size:12px;color:var(--muted);margin-top:5px}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead tr{background:var(--surface2)}
+th{padding:9px 11px;color:var(--muted);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:9px 11px;border-bottom:1px solid var(--border);color:var(--text)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(255,255,255,.02)}
+.badge{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600}
+.badge.credit{background:var(--blue-dim);color:var(--blue)}
+.badge.debit{background:var(--green-dim);color:var(--green)}
+.badge.prepaid{background:rgba(245,166,35,.15);color:var(--gold)}
+.prog-toggles{display:flex;flex-wrap:wrap;gap:8px;padding:14px 16px;background:var(--surface2);border-radius:var(--radius-lg);margin-bottom:14px;align-items:center}
+.pt-label{font-size:11px;color:var(--muted);margin-right:4px}
+.ptog{display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:8px;border:1px solid var(--border2);cursor:pointer;font-size:12px;font-weight:500;font-family:var(--font);background:var(--surface);color:var(--muted);transition:all .15s}
+.ptog.on.ic{border-color:var(--blue);background:var(--blue-dim);color:var(--blue)}
+.ptog.on.sur{border-color:var(--green);background:var(--green-dim);color:var(--green)}
+.ptog.on.dual{border-color:var(--purple);background:var(--purple-dim);color:var(--purple)}
+.pdot{width:7px;height:7px;border-radius:50%;background:var(--border2)}
+.ptog.on.ic .pdot{background:var(--blue)}
+.ptog.on.sur .pdot{background:var(--green)}
+.ptog.on.dual .pdot{background:var(--purple)}
+.prop-block{border-radius:var(--radius-lg);padding:16px;margin-bottom:10px}
+.prop-block.ic{background:rgba(74,127,255,.06);border:1px solid rgba(74,127,255,.2)}
+.prop-block.sur{background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.2)}
+.prop-block.dual{background:rgba(155,109,255,.06);border:1px solid rgba(155,109,255,.2)}
+.prop-block h3{font-size:14px;font-weight:600;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+.prop-block.ic h3{color:var(--blue)}
+.prop-block.sur h3{color:var(--green)}
+.prop-block.dual h3{color:var(--purple)}
+.prop-block .drow .dl{color:var(--muted)}
+.no-sel{text-align:center;padding:40px;color:var(--muted);border:1px dashed var(--border);border-radius:var(--radius-lg)}
+.print-btn{background:transparent;border:1px solid var(--border2);color:var(--muted);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:12px;font-family:var(--font);margin-left:auto}
+.print-btn:hover{color:var(--text)}
+@media print{
+  #api-banner,header,.rate-bar,.tab-bar,.btn-back,.merchant-bar{display:none!important}
+  body{background:#fff;color:#111}
+  .sblock,.prop-block,.metric,.sum-card{border-color:#ddd!important;background:#fff!important}
+  .prop-block.ic{background:#f0f5ff!important}
+  .prop-block.sur{background:#f0fdf7!important}
+  .prop-block.dual{background:#f5f0ff!important}
+  .prog-toggles{display:none!important}
+}
+@media(max-width:640px){main{padding:16px}.upload-hero h1{font-size:30px}header{padding:10px 16px}}
+</style>
+</head>
+<body>
+
+<div id="api-banner">
+  <label for="api-key-input">🔑 Anthropic API Key:</label>
+  <input type="password" id="api-key-input" placeholder="sk-ant-api03-…" autocomplete="off">
+  <button id="api-key-save" onclick="saveKey()">Save</button>
+  <span class="api-hint">Get yours free at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> — stored in your browser only</span>
+</div>
+
+<header>
+  <div class="logo-wrap">
+    <img src="Color_Logo_File.png" alt="TopCard Payments" onerror="this.style.display='none';document.getElementById('logo-text').style.display='block'">
+    <span id="logo-text" style="display:none;font-family:'Syne',sans-serif;font-size:18px;font-weight:700">TopCard Payments</span>
+    <div class="logo-divider"></div>
+    <span class="header-tag">Statement Analyzer</span>
+  </div>
+  <span class="key-status" id="key-status">No API key</span>
+</header>
+
+<main id="main"></main>
+
+<script>
+var S={
+  phase:'upload',stmt:null,tab:'overview',error:'',
+  uploadMode:'pdf',chosenFile:null,
+  icMarkup:.25,surCredit:3.0,surDebit:2.0,dualRate:3.5,
+  pp:{ic:true,sur:true,dual:true}
+};
+
+function getKey(){return localStorage.getItem('tc_api_key')||'';}
+function saveKey(){
+  var v=document.getElementById('api-key-input').value.trim();
+  if(v){localStorage.setItem('tc_api_key',v);updateKeyStatus();alert('API key saved!');}
+}
+function updateKeyStatus(){
+  var k=getKey(),el=document.getElementById('key-status');
+  if(el){el.textContent=k?'API key set ✓':'No API key';el.className='key-status '+(k?'set':'unset');}
+  var inp=document.getElementById('api-key-input');
+  if(inp&&k)inp.value=k;
+}
+
+function c$(n){return '$'+(+n||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function pct(n){return (+n||0).toFixed(3)+'%';}
+function num(n){return Math.round(+n||0).toLocaleString('en-US');}
+function fmtB(b){if(b<1024)return b+'B';if(b<1048576)return (b/1024).toFixed(1)+'KB';return (b/1048576).toFixed(1)+'MB';}
+
+function calcSv(){
+  var s=S.stmt,vol=+s.totalVolume||0,fees=+s.totalFees||0;
+  var ic_cost=+s.interchangeCost||(fees*.70);
+  var fixed=(+s.monthlyFee||0)+(+s.pciFee||0)+(+s.statementFee||0)+(+s.otherFees||0);
+  var cv=0,dv=0;
+  (s.cardTypes||[]).forEach(function(c){if(c.type==='debit'||c.type==='prepaid')dv+=(+c.volume||0);else cv+=(+c.volume||0);});
+  if(cv+dv===0){cv=vol*.72;dv=vol*.28;}
+  var icMo=ic_cost+vol*(S.icMarkup/100)+fixed*.5;
+  var surMo=dv*(S.surDebit/100)+fixed*.5;
+  var dualMo=fixed*.5;
+  return{vol:vol,fees:fees,ic_cost:ic_cost,cv:cv,dv:dv,effRate:vol>0?(fees/vol)*100:0,
+    ic:{mo:icMo,save:fees-icMo,saveAnn:(fees-icMo)*12,rate:vol>0?(icMo/vol)*100:0},
+    sur:{mo:surMo,cust:cv*(S.surCredit/100),save:fees-surMo,saveAnn:(fees-surMo)*12},
+    dual:{mo:dualMo,cust:vol*(S.dualRate/100),save:fees-dualMo,saveAnn:(fees-dualMo)*12}};
+}
+
+function render(){
+  var m=document.getElementById('main');
+  if(S.phase==='upload')  m.innerHTML=renderUpload();
+  if(S.phase==='parsing') m.innerHTML=renderParsing();
+  if(S.phase==='results') m.innerHTML=renderResults();
+  bind();
+}
+
+function renderUpload(){
+  var isPdf=S.uploadMode==='pdf';
+  return '<div class="upload-screen">'+
+    '<div class="upload-hero"><h1>Merchant Savings<br><span>Analysis Tool</span></h1>'+
+    '<p>Upload a statement and instantly generate a savings proposal.</p></div>'+
+    '<div class="file-tabs" style="width:100%">'+
+      '<button class="file-tab'+(isPdf?' on':'')+'" id="utab-pdf">📄 PDF Upload</button>'+
+      '<button class="file-tab'+(!isPdf?' on':'')+'" id="utab-txt">📋 Paste Text</button>'+
+    '</div>'+
+    (isPdf?
+      '<div class="drop-zone" id="dz">'+
+        '<div class="drop-icon">📄</div>'+
+        '<h3>Drop PDF here or click to browse</h3>'+
+        '<p>First Data, TSYS, Heartland, Square, Stripe, Worldpay and more</p>'+
+        '<input type="file" id="fi" accept=".pdf,application/pdf,.txt,.csv" style="display:none">'+
+      '</div>'
+    :
+      '<textarea class="paste-area" id="pt" placeholder="Paste your merchant statement text here…" style="width:100%"></textarea>'
+    )+
+    (S.chosenFile?
+      '<div class="file-chosen"><span style="font-size:20px">📄</span>'+
+      '<span class="fname">'+S.chosenFile.name+'</span>'+
+      '<span class="fsize">'+fmtB(S.chosenFile.size)+'</span>'+
+      '<button class="fclear" id="fclear-btn">✕ Remove</button></div>'+
+      '<button class="btn-analyze" id="go-btn">Analyze Statement →</button>'
+    :(!isPdf?'<button class="btn-analyze" id="go-btn" style="display:none">Analyze Statement →</button>':''))+
+    '<button class="btn-demo" id="demo-btn">Load demo statement (no file needed)</button>'+
+    (S.error?'<div class="err-box">'+S.error+'</div>':'')+
+  '</div>';
+}
+
+function renderParsing(){
+  return '<div class="parsing-screen"><div class="spinner"></div>'+
+    '<h2>Analyzing Statement…</h2><p>Extracting interchange costs, card types, and fees</p></div>';
+}
+
+function renderResults(){
+  var s=S.stmt,sv=calcSv();
+  var TABS=['overview','ic+','surcharge','dual','cards','proposal'];
+  var NAMES={overview:'Overview','ic+':'IC Plus',surcharge:'Surcharge',dual:'Dual Pricing',cards:'Card Types',proposal:'📄 Proposal'};
+  var h='<div class="merchant-bar">'+
+    '<div><div class="merchant-name">'+(s.merchantName||'Merchant')+'</div>'+
+    '<div class="merchant-meta">'+(s.processorName||'')+(s.statementMonth?' · '+s.statementMonth:'')+'</div></div>'+
+    '<button class="btn-back" id="back-btn">← New Analysis</button></div>';
+  h+='<div class="rate-bar">'+
+    SL('IC+ markup','icMarkup',S.icMarkup,.10,1.00,.05)+
+    SL('Surcharge (credit)','surCredit',S.surCredit,1,4,.1)+
+    SL('Debit flat rate','surDebit',S.surDebit,.5,3,.1)+
+    SL('Dual price rate','dualRate',S.dualRate,2,4,.1)+'</div>';
+  h+='<div class="tab-bar">'+TABS.map(function(t){
+    return '<button class="tab-btn'+(S.tab===t?' on':'')+'" data-t="'+t+'">'+NAMES[t]+'</button>';
+  }).join('')+'</div>';
+  if(S.tab==='overview')  h+=tOverview(s,sv);
+  if(S.tab==='ic+')       h+=tIC(s,sv);
+  if(S.tab==='surcharge') h+=tSur(s,sv);
+  if(S.tab==='dual')      h+=tDual(s,sv);
+  if(S.tab==='cards')     h+=tCards(s);
+  if(S.tab==='proposal')  h+=tProposal(s,sv);
+  return h;
+}
+
+function SL(label,key,val,mn,mx,step){
+  var d=step<.1?3:1;
+  return '<div class="rate-ctrl"><label>'+label+': <span id="v-'+key+'" class="rv">'+val.toFixed(d)+'%</span></label>'+
+    '<input type="range" min="'+mn+'" max="'+mx+'" step="'+step+'" value="'+val+'" id="sl-'+key+'"></div>';
+}
+function MC(l,v,s,c){return '<div class="metric '+(c||'')+'"><div class="metric-label">'+l+'</div><div class="metric-value">'+v+'</div>'+(s?'<div class="metric-sub">'+s+'</div>':'')+'</div>';}
+function DR(l,v,c){return '<div class="drow '+(c||'')+'"><span class="dl">'+l+'</span><span class="dv">'+v+'</span></div>';}
+
+function tOverview(s,sv){
+  return '<div class="metric-grid">'+
+    MC('Monthly Volume',c$(sv.vol),'','')+ MC('Annual Volume',c$(sv.vol*12),'','')+
+    MC('Monthly Fees',c$(sv.fees),'','danger')+ MC('Annual Fees',c$(sv.fees*12),'','danger')+
+    MC('Effective Rate',pct(sv.effRate),'','')+ MC('Interchange Cost',c$(sv.ic_cost),'before markup','')+
+    MC('Pricing Model',(s.pricingModel||'unknown').replace(/_/g,' ').toUpperCase(),'','')+
+    MC('Transactions',num(s.totalTransactions),'','')+
+  '</div>'+
+  '<div class="summary-grid">'+
+    '<div class="sum-card blue"><h4>⚡ IC Plus — '+pct(S.icMarkup)+'</h4>'+
+      '<div class="sum-row"><span class="sl">New monthly</span><span class="sv">'+c$(sv.ic.mo)+'</span></div>'+
+      '<div class="sum-row big blue"><span class="sl">Monthly savings</span><span class="sv">'+c$(sv.ic.save)+'</span></div>'+
+      '<div class="sum-row big blue"><span class="sl">Annual savings</span><span class="sv">'+c$(sv.ic.saveAnn)+'</span></div></div>'+
+    '<div class="sum-card green"><h4>💳 Surcharge — '+pct(S.surCredit)+'</h4>'+
+      '<div class="sum-row"><span class="sl">Merchant monthly</span><span class="sv">'+c$(sv.sur.mo)+'</span></div>'+
+      '<div class="sum-row"><span class="sl">Passed to customers</span><span class="sv">'+c$(sv.sur.cust)+'</span></div>'+
+      '<div class="sum-row big green"><span class="sl">Monthly savings</span><span class="sv">'+c$(sv.sur.save)+'</span></div>'+
+      '<div class="sum-row big green"><span class="sl">Annual savings</span><span class="sv">'+c$(sv.sur.saveAnn)+'</span></div></div>'+
+    '<div class="sum-card purple"><h4>🏷️ Dual Pricing — '+pct(S.dualRate)+'</h4>'+
+      '<div class="sum-row"><span class="sl">Merchant monthly</span><span class="sv">'+c$(sv.dual.mo)+'</span></div>'+
+      '<div class="sum-row"><span class="sl">Passed to customers</span><span class="sv">'+c$(sv.dual.cust)+'</span></div>'+
+      '<div class="sum-row big purple"><span class="sl">Monthly savings</span><span class="sv">'+c$(sv.dual.save)+'</span></div>'+
+      '<div class="sum-row big purple"><span class="sl">Annual savings</span><span class="sv">'+c$(sv.dual.saveAnn)+'</span></div></div>'+
+  '</div>';
+}
+function tIC(s,sv){
+  return '<div class="prog-hero blue"><div class="ph-label">Interchange Plus Pricing</div>'+
+    '<div class="ph-value">'+pct(S.icMarkup)+' markup over interchange</div>'+
+    '<div class="ph-sub">Full transparency — pay actual network rates + flat markup only</div></div>'+
+    '<div class="metric-grid">'+
+    MC('Current Monthly',c$(sv.fees),'','danger')+MC('Proposed Monthly',c$(sv.ic.mo),'','')+
+    MC('Monthly Savings',c$(sv.ic.save),'','success')+MC('Annual Savings',c$(sv.ic.saveAnn),'','success')+
+    MC('IC Cost (Est.)',c$(sv.ic_cost),'passthrough','')+MC('Markup Cost',c$(sv.vol*S.icMarkup/100),'','')+
+    MC('Current Eff. Rate',pct(sv.effRate),'','danger')+MC('New Eff. Rate',pct(sv.ic.rate),'','')+
+    '</div><div class="note-box">Interchange passes at actual Visa/MC/Amex network cost. TopCard adds only '+pct(S.icMarkup)+' on top. The more debit cards your customers use, the lower your effective rate.</div>';
+}
+function tSur(s,sv){
+  return '<div class="prog-hero green"><div class="ph-label">Surcharge Program</div>'+
+    '<div class="ph-value">'+pct(S.surCredit)+' on credit · '+pct(S.surDebit)+' flat on debit</div>'+
+    '<div class="ph-sub">Credit card fees passed to cardholder — fully card-brand compliant</div></div>'+
+    '<div class="metric-grid">'+
+    MC('Credit Volume',c$(sv.cv),'','')+MC('Debit Volume',c$(sv.dv),'','')+
+    MC('Surcharge Collected',c$(sv.sur.cust),'paid by customers','')+MC('Merchant Debit Cost',c$(sv.sur.mo),'','')+
+    MC('Current Merchant Cost',c$(sv.fees),'','danger')+MC('New Merchant Cost',c$(sv.sur.mo),'','success')+
+    MC('Monthly Savings',c$(sv.sur.save),'','success')+MC('Annual Savings',c$(sv.sur.saveAnn),'','success')+
+    '</div><div class="note-box">A '+pct(S.surCredit)+' surcharge disclosed and added to credit transactions at checkout. Debit at flat '+pct(S.surDebit)+'. Compliant with Visa, Mastercard, and applicable state laws.</div>';
+}
+function tDual(s,sv){
+  return '<div class="prog-hero purple"><div class="ph-label">Dual Pricing Program</div>'+
+    '<div class="ph-value">'+pct(S.dualRate)+' card price vs. cash price</div>'+
+    '<div class="ph-sub">Two prices at point of sale — card customers pay the higher price</div></div>'+
+    '<div class="metric-grid">'+
+    MC('Total Volume',c$(sv.vol),'','')+MC('Card Price Uplift',c$(sv.dual.cust),'shown to cardholder','')+
+    MC('Current Merchant Cost',c$(sv.fees),'','danger')+MC('New Merchant Cost',c$(sv.dual.mo),'','success')+
+    MC('Monthly Savings',c$(sv.dual.save),'','success')+MC('Annual Savings',c$(sv.dual.saveAnn),'','success')+
+    '</div><div class="note-box">Two prices at POS — cash/check and card price '+pct(S.dualRate)+' higher. Card-paying customers absorb all processing. Merchant cost approaches zero.</div>';
+}
+function tCards(s){
+  var cards=s.cardTypes||[];
+  if(!cards.length)return '<div style="text-align:center;padding:48px;color:var(--muted)">No card type detail extracted from this statement.</div>';
+  return '<div class="tbl-wrap"><table><thead><tr><th>Card Type</th><th>Network</th><th>Type</th><th>Volume</th><th>Trans.</th><th>IC Rate</th><th>IC Fees</th><th>Markup</th><th>Total Fees</th><th>Eff. Rate</th></tr></thead><tbody>'+
+  cards.map(function(c){return '<tr><td>'+c.name+'</td><td>'+(c.network||'—')+'</td>'+
+    '<td><span class="badge '+(c.type||'credit')+'">'+(c.type||'—')+'</span></td>'+
+    '<td>'+c$(c.volume)+'</td><td>'+num(c.transactions)+'</td><td>'+pct(c.interchangeRate)+'</td>'+
+    '<td>'+c$(c.interchangeFees)+'</td><td>'+pct(c.processorMarkup)+'</td>'+
+    '<td>'+c$(c.totalFees)+'</td><td>'+pct(c.effectiveRate)+'</td></tr>';}).join('')+'</tbody></table></div>';
+}
+function tProposal(s,sv){
+  var pp=S.pp,n=0,sel=[];
+  if(pp.ic)sel.push('ic');if(pp.sur)sel.push('sur');if(pp.dual)sel.push('dual');
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var h='<div class="sblock" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px">'+
+    '<div><div style="font-family:var(--display);font-size:22px">TopCard Payments</div>'+
+    '<div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:2px">Processing Savings Proposal</div></div>'+
+    '<div style="text-align:right;font-size:12px;color:var(--muted);line-height:1.9">'+
+    '<div style="font-weight:600;color:var(--text)">'+(s.merchantName||'Merchant')+'</div>'+
+    '<div>'+d+'</div><div>'+(s.statementMonth||'')+'</div></div></div>';
+  h+='<div class="prog-toggles"><span class="pt-label">Include:</span>'+
+    '<button class="ptog ic'+(pp.ic?' on':'')+'" data-prog="ic"><span class="pdot"></span>IC Plus</button>'+
+    '<button class="ptog sur'+(pp.sur?' on':'')+'" data-prog="sur"><span class="pdot"></span>Surcharge</button>'+
+    '<button class="ptog dual'+(pp.dual?' on':'')+'" data-prog="dual"><span class="pdot"></span>Dual Pricing</button>'+
+    '<button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button></div>';
+  h+='<div class="sblock"><h3>Current Processing Summary</h3>'+
+    DR('Processor',s.processorName||'—','')+DR('Monthly volume',c$(sv.vol),'')+
+    DR('Monthly fees',c$(sv.fees),'red')+DR('Annual fees',c$(sv.fees*12),'red')+
+    DR('Effective rate',pct(sv.effRate),'')+DR('Pricing model',(s.pricingModel||'—').replace(/_/g,' ').toUpperCase(),'')+
+    DR('Interchange cost (est.)',c$(sv.ic_cost),'')+DR('Transactions',num(s.totalTransactions),'')+
+  '</div>';
+  if(!sel.length)return h+'<div class="no-sel">Select at least one program above to build the proposal.</div>';
+  if(pp.ic){n++;h+='<div class="prop-block ic"><h3>Option '+n+' — Interchange Plus at '+pct(S.icMarkup)+'</h3>'+DR('Proposed monthly fees',c$(sv.ic.mo),'')+DR('New effective rate',pct(sv.ic.rate),'')+DR('Monthly savings',c$(sv.ic.save),'green')+DR('Annual savings',c$(sv.ic.saveAnn),'green')+'<div class="note-box">Full interchange transparency — actual network rate plus '+pct(S.icMarkup)+' markup only. No bundling, no hidden tiers.</div></div>';}
+  if(pp.sur){n++;h+='<div class="prop-block sur"><h3>Option '+n+' — Surcharge Program</h3>'+DR('Credit surcharge (passed to customer)',pct(S.surCredit),'')+DR('Debit flat rate (merchant)',pct(S.surDebit),'')+DR('Merchant monthly cost',c$(sv.sur.mo),'')+DR('Monthly savings',c$(sv.sur.save),'green')+DR('Annual savings',c$(sv.sur.saveAnn),'green')+'<div class="note-box">Credit fees passed to cardholder at '+pct(S.surCredit)+', disclosed at checkout. Debit flat at '+pct(S.surDebit)+'. Fully compliant.</div></div>';}
+  if(pp.dual){n++;h+='<div class="prop-block dual"><h3>Option '+n+' — Dual Pricing at '+pct(S.dualRate)+'</h3>'+DR('Card price uplift',pct(S.dualRate),'')+DR('Merchant monthly cost',c$(sv.dual.mo),'')+DR('Monthly savings',c$(sv.dual.save),'green')+DR('Annual savings',c$(sv.dual.saveAnn),'green')+'<div class="note-box">Cash and card prices at POS. Card is '+pct(S.dualRate)+' higher, covering all processing. Merchant cost near zero.</div></div>';}
+  if(sel.length>1){
+    h+='<div class="sblock"><h3>Savings at a Glance</h3><div class="tbl-wrap"><table><thead><tr><th>Program</th><th>Monthly cost</th><th>Monthly savings</th><th>Annual savings</th><th>Eff. rate</th></tr></thead><tbody>'+
+    '<tr><td><strong>Current</strong></td><td style="color:var(--red)">'+c$(sv.fees)+'</td><td>—</td><td>—</td><td>'+pct(sv.effRate)+'</td></tr>'+
+    (pp.ic?'<tr><td>IC Plus</td><td>'+c$(sv.ic.mo)+'</td><td style="color:var(--green)">'+c$(sv.ic.save)+'</td><td style="color:var(--green)">'+c$(sv.ic.saveAnn)+'</td><td>'+pct(sv.ic.rate)+'</td></tr>':'')+
+    (pp.sur?'<tr><td>Surcharge</td><td>'+c$(sv.sur.mo)+'</td><td style="color:var(--green)">'+c$(sv.sur.save)+'</td><td style="color:var(--green)">'+c$(sv.sur.saveAnn)+'</td><td>—</td></tr>':'')+
+    (pp.dual?'<tr><td>Dual Pricing</td><td>'+c$(sv.dual.mo)+'</td><td style="color:var(--green)">'+c$(sv.dual.save)+'</td><td style="color:var(--green)">'+c$(sv.dual.saveAnn)+'</td><td>—</td></tr>':'')+
+    '</tbody></table></div><div style="font-size:11px;color:var(--muted);margin-top:10px">Based on '+(s.statementMonth||'statement')+' data. Actual savings may vary. All programs comply with applicable card brand rules.</div></div>';
+  }
+  return h;
+}
+
+function refreshContent(){
+  var tabs=document.querySelector('.tab-bar');if(!tabs)return;
+  var sv=calcSv(),st=S.stmt,tmp=document.createElement('div');
+  if(S.tab==='overview')  tmp.innerHTML=tOverview(st,sv);
+  if(S.tab==='ic+')       tmp.innerHTML=tIC(st,sv);
+  if(S.tab==='surcharge') tmp.innerHTML=tSur(st,sv);
+  if(S.tab==='dual')      tmp.innerHTML=tDual(st,sv);
+  if(S.tab==='cards')     tmp.innerHTML=tCards(st);
+  if(S.tab==='proposal')  tmp.innerHTML=tProposal(st,sv);
+  var next=tabs.nextSibling;
+  while(next){var n2=next.nextSibling;next.parentNode.removeChild(next);next=n2;}
+  while(tmp.firstChild)tabs.parentNode.appendChild(tmp.firstChild);
+  bindContent();
+}
+
+function bind(){
+  updateKeyStatus();
+  var bb=document.getElementById('back-btn');
+  if(bb)bb.onclick=function(){S.phase='upload';S.stmt=null;S.error='';S.chosenFile=null;render();};
+  var demo=document.getElementById('demo-btn');
+  if(demo)demo.onclick=loadDemo;
+  var utPdf=document.getElementById('utab-pdf');
+  var utTxt=document.getElementById('utab-txt');
+  if(utPdf)utPdf.onclick=function(){S.uploadMode='pdf';S.chosenFile=null;render();};
+  if(utTxt)utTxt.onclick=function(){S.uploadMode='txt';S.chosenFile=null;render();};
+  var fi=document.getElementById('fi'),dz=document.getElementById('dz');
+  if(fi){
+    fi.addEventListener('change',function(){var f=fi.files&&fi.files[0];if(f)pickFile(f);});
+  }
+  if(dz){
+    dz.addEventListener('click',function(e){if(fi&&e.target!==fi)fi.click();});
+    dz.addEventListener('dragover',function(e){e.preventDefault();dz.classList.add('over');});
+    dz.addEventListener('dragleave',function(){dz.classList.remove('over');});
+    dz.addEventListener('drop',function(e){e.preventDefault();dz.classList.remove('over');var f=e.dataTransfer&&e.dataTransfer.files[0];if(f)pickFile(f);});
+  }
+  var fc=document.getElementById('fclear-btn');
+  if(fc)fc.onclick=function(){S.chosenFile=null;render();};
+  var go=document.getElementById('go-btn'),pt=document.getElementById('pt');
+  if(go&&pt){
+    pt.oninput=function(){go.style.display=pt.value.trim()?'block':'none';};
+    go.onclick=function(){if(pt.value.trim())analyzeText(pt.value);};
+  } else if(go&&S.chosenFile){
+    go.onclick=function(){analyzeFile(S.chosenFile);};
+  }
+  ['icMarkup','surCredit','surDebit','dualRate'].forEach(function(key){
+    var el=document.getElementById('sl-'+key);if(!el)return;
+    el.addEventListener('input',function(){
+      var v=parseFloat(el.value);S[key]=v;
+      var ve=document.getElementById('v-'+key);
+      var step={icMarkup:.05,surCredit:.1,surDebit:.1,dualRate:.1}[key];
+      if(ve)ve.textContent=v.toFixed(step<.1?3:1)+'%';
+      refreshContent();
+    });
+  });
+  document.querySelectorAll('[data-t]').forEach(function(b){b.onclick=function(){S.tab=b.getAttribute('data-t');render();};});
+  bindContent();
+}
+function bindContent(){
+  document.querySelectorAll('[data-prog]').forEach(function(b){
+    b.onclick=function(){var k=b.getAttribute('data-prog');S.pp[k]=!S.pp[k];refreshContent();};
+  });
+  document.querySelectorAll('[data-t]').forEach(function(b){b.onclick=function(){S.tab=b.getAttribute('data-t');render();};});
+}
+
+function pickFile(file){
+  var isPdf=file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf');
+  var reader=new FileReader();
+  reader.onerror=function(){S.error='Could not read file.';render();};
+  if(isPdf){
+    reader.onload=function(e){S.chosenFile={name:file.name,size:file.size,base64:e.target.result.split(',')[1],type:'pdf'};render();};
+    reader.readAsDataURL(file);
+  } else {
+    reader.onload=function(e){S.chosenFile={name:file.name,size:file.size,text:e.target.result,type:'text'};render();};
+    reader.readAsText(file);
   }
 }
+function analyzeFile(f){
+  if(!getKey()){S.error='Please enter your Anthropic API key at the top.';render();return;}
+  if(f.type==='pdf')analyzeViaProxy({
+    model:'claude-sonnet-4-20250514',max_tokens:3000,system:SYS,
+    messages:[{role:'user',content:[
+      {type:'document',source:{type:'base64',media_type:'application/pdf',data:f.base64}},
+      {type:'text',text:'Parse this merchant processing statement and return the JSON.'}
+    ]}]
+  });
+  else analyzeText(f.text);
+}
+function analyzeText(text){
+  if(!getKey()){S.error='Please enter your Anthropic API key at the top.';render();return;}
+  analyzeViaProxy({
+    model:'claude-sonnet-4-20250514',max_tokens:3000,system:SYS,
+    messages:[{role:'user',content:'Parse this merchant statement:\n\n'+text}]
+  });
+}
+
+var SYS='You are a payment processing analyst. Extract data from the merchant statement. Return ONLY valid JSON, no markdown fences, no extra text. Schema: {"merchantName":"","processorName":"","statementMonth":"","totalVolume":0,"totalTransactions":0,"totalFees":0,"monthlyFee":0,"pciFee":0,"statementFee":0,"otherFees":0,"interchangeCost":0,"currentMarkup":0,"pricingModel":"tiered","cardTypes":[{"name":"","type":"credit","network":"","volume":0,"transactions":0,"interchangeRate":0,"interchangeFees":0,"processorMarkup":0,"totalFees":0,"effectiveRate":0}],"rawNotes":""}. All rates as percentages e.g. 2.5 not 0.025.';
+
+async function analyzeViaProxy(body){
+  S.phase='parsing';render();
+  try{
+    var res=await fetch('/api/analyze',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':getKey()},
+      body:JSON.stringify(body)
+    });
+    var data=await res.json();
+    if(data.error)throw new Error(typeof data.error==='object'?data.error.message:data.error);
+    var raw=(data.content||[]).filter(function(b){return b.type==='text';}).map(function(b){return b.text;}).join('');
+    S.stmt=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    S.phase='results';S.tab='overview';S.error='';render();
+  }catch(e){
+    S.error='Analysis failed: '+e.message;S.phase='upload';render();
+  }
+}
+
+function loadDemo(){
+  S.stmt={merchantName:"Main Street Restaurant",processorName:"First Data / Fiserv",statementMonth:"April 2025",totalVolume:87420,totalTransactions:3241,totalFees:2884,monthlyFee:25,pciFee:19.95,statementFee:8,otherFees:12,interchangeCost:1820,currentMarkup:.85,pricingModel:"tiered",
+  cardTypes:[
+    {name:"Visa Credit",type:"credit",network:"Visa",volume:28400,transactions:1050,interchangeRate:1.80,interchangeFees:511,processorMarkup:.85,totalFees:752,effectiveRate:2.65},
+    {name:"Visa Debit",type:"debit",network:"Visa",volume:19200,transactions:720,interchangeRate:.05,interchangeFees:10,processorMarkup:.85,totalFees:173,effectiveRate:.90},
+    {name:"MC Credit",type:"credit",network:"Mastercard",volume:21800,transactions:802,interchangeRate:1.75,interchangeFees:382,processorMarkup:.85,totalFees:567,effectiveRate:2.60},
+    {name:"MC Debit",type:"debit",network:"Mastercard",volume:8900,transactions:334,interchangeRate:.05,interchangeFees:4,processorMarkup:.85,totalFees:80,effectiveRate:.90},
+    {name:"Amex Credit",type:"credit",network:"Amex",volume:9120,transactions:335,interchangeRate:2.30,interchangeFees:210,processorMarkup:.85,totalFees:288,effectiveRate:3.16}
+  ]};
+  S.phase='results';S.tab='overview';S.error='';render();
+}
+render();
+</script>
+</body>
+</html>
